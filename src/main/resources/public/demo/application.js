@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,8 +20,10 @@
 angular.module('vtl', ['ui.codemirror', 'angular.filter'])
     .controller('ExecutionController', ['$scope', '$http', '$q', function ($scope, $http, $q) {
         "use strict";
-        $scope.expression = "ssbDataset := get(\"http://data.ssb.no/api/v0/dataset/1102\")\n" +
-            "klassDataset := get(\"http://data.ssb.no/api/klass/v1/classifications/20/codes?from=2013-01-01\")";
+        $scope.expression = "data := get(\"POGUES-TEST\")\n"+
+        "\ntest := [data] {\n" +
+	      "   measure VARIABLE := 3.14\n" +
+        "}\n";
 
         $scope.editorOptions = {
             lineWrapping: true,

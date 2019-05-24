@@ -202,6 +202,7 @@
                         <exclude>**/*.json</exclude>
                         <exclude>**/*.js</exclude>
                         <exclude>**/*.css</exclude>
+			<exclude>**/simpsons.xml</exclude>
                     </excludes>
                 </configuration>
                 <executions>
