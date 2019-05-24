@@ -60,28 +60,13 @@
         <url>https://github.com/statisticsnorway/java-vtl-tools</url>
     </scm>
 
-    <profiles>
-
-        <profile>
-            <!-- internal distribution for ssb -->
-            <id>ssb</id>
-            <distributionManagement>
-                <repository>
-                    <id>releases</id>
-                    <name>SSB Nexus Releases</name>
-                    <url>https://nexus.ssb.no/repository/maven-releases/</url>
-                </repository>
-                <snapshotRepository>
-                    <id>snapshots</id>
-                    <name>SSB Snapshot Repository</name>
-                    <url>https://nexus.ssb.no/repository/maven-snapshots/</url>
-                </snapshotRepository>
-            </distributionManagement>
-        </profile>
-
-    </profiles>
-
     <dependencies>
+
+        <dependency>
+            <groupId>fr.insee.vtl</groupId>
+            <artifactId>pogues-connector</artifactId>
+            <version>0.1</version>
+        </dependency>
 
         <dependency>
             <groupId>no.ssb.vtl</groupId>
@@ -217,6 +202,7 @@
                         <exclude>**/*.json</exclude>
                         <exclude>**/*.js</exclude>
                         <exclude>**/*.css</exclude>
+			<exclude>**/simpsons.xml</exclude>
                     </excludes>
                 </configuration>
                 <executions>

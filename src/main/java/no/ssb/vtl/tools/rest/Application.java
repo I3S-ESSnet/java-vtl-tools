@@ -26,6 +26,7 @@ import com.google.common.cache.CacheBuilder;
 import com.google.common.collect.Lists;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;
+import fr.insee.vtl.connectors.PoguesConnector;
 import no.ssb.vtl.connectors.Connector;
 import no.ssb.vtl.connectors.PxApiConnector;
 import no.ssb.vtl.connectors.SsbApiConnector;
@@ -93,6 +94,9 @@ public class Application {
         for (Connector connector : loader) {
             connectors.add(connector);
         }
+
+        // Adding Pogues VTL connector
+        connectors.add(new PoguesConnector());
 
         connectors.add(new SsbApiConnector(new ObjectMapper()));
         connectors.add(new SsbKlassApiConnector(new ObjectMapper(), SsbKlassApiConnector.PeriodType.YEAR));
